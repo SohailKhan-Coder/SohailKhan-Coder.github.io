@@ -3,24 +3,31 @@ import { motion } from 'motion/react';
 import { Sparkles, Maximize2, ArrowRight } from 'lucide-react';
 import { Project } from '../types';
 import { ProjectModal } from './ProjectModal';
-import projectPreview1 from '../assets/images/project_chat_app_1793964324542.jpg';
-import projectPreview2 from '../assets/images/project_school_management_1793964325994.jpg';
-import projectPreview3 from '../assets/images/project_social_media_1793964326526.jpg';
-import projectPreview4 from '../assets/images/project_ecommerce_app_1793964327569.jpg';
-import projectPreview5 from '../assets/images/project_estimation_website_1793964327808.jpg';
-import projectPreview6 from '../assets/images/project_global_provider_1793964327430.jpg';
-import projectPreview7 from '../assets/images/project_pharmacy_system_1793964345702.jpg';
-import projectPreview8 from '../assets/images/project_cafe_system_1793964348011.jpg';
-import projectPreview9 from '../assets/images/project_restaurant_system_1793964347687.jpg';
+import { ProjectImage } from './ProjectImage';
+import projectPreview1 from '../assets/images/project_chat_app_1793964324542.webp';
+import projectThumbnail1 from '../assets/images/project_chat_app_1793964324542-640.webp';
+import projectPreview2 from '../assets/images/project_school_management_1793964325994.webp';
+import projectThumbnail2 from '../assets/images/project_school_management_1793964325994-640.webp';
+import projectPreview3 from '../assets/images/project_social_media_1793964326526.webp';
+import projectThumbnail3 from '../assets/images/project_social_media_1793964326526-640.webp';
+import projectPreview4 from '../assets/images/project_ecommerce_app_1793964327569.webp';
+import projectThumbnail4 from '../assets/images/project_ecommerce_app_1793964327569-640.webp';
+import projectPreview5 from '../assets/images/project_estimation_website_1793964327808.webp';
+import projectThumbnail5 from '../assets/images/project_estimation_website_1793964327808-640.webp';
+import projectPreview6 from '../assets/images/project_global_provider_1793964327430.webp';
+import projectThumbnail6 from '../assets/images/project_global_provider_1793964327430-640.webp';
+import projectPreview7 from '../assets/images/project_pharmacy_system_1793964345702.webp';
+import projectThumbnail7 from '../assets/images/project_pharmacy_system_1793964345702-640.webp';
+import projectPreview8 from '../assets/images/project_cafe_system_1793964348011.webp';
+import projectThumbnail8 from '../assets/images/project_cafe_system_1793964348011-640.webp';
+import projectPreview9 from '../assets/images/project_restaurant_system_1793964347687.webp';
+import projectThumbnail9 from '../assets/images/project_restaurant_system_1793964347687-640.webp';
 
 interface ProjectsSectionProps {
   onStartProject: () => void;
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject }) => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const projects: Project[] = [
+const projects: Project[] = [
     // Row 1
     {
       id: 'chat-app',
@@ -39,6 +46,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Flutter Mobile App',
       imageUrl: projectPreview1,
+      imageSrcSet: `${projectThumbnail1} 640w, ${projectPreview1} 1376w`,
     },
     {
       id: 'school-management',
@@ -57,6 +65,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Enterprise Dashboard',
       imageUrl: projectPreview2,
+      imageSrcSet: `${projectThumbnail2} 640w, ${projectPreview2} 1376w`,
     },
     {
       id: 'social-media',
@@ -75,6 +84,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Flutter Mobile App',
       imageUrl: projectPreview3,
+      imageSrcSet: `${projectThumbnail3} 640w, ${projectPreview3} 1376w`,
     },
 
     // Row 2
@@ -95,6 +105,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Flutter Mobile App',
       imageUrl: projectPreview4,
+      imageSrcSet: `${projectThumbnail4} 640w, ${projectPreview4} 1376w`,
     },
     {
       id: 'estimation-website',
@@ -113,6 +124,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Corporate Web App',
       imageUrl: projectPreview5,
+      imageSrcSet: `${projectThumbnail5} 640w, ${projectPreview5} 1376w`,
     },
     {
       id: 'global-service-provider',
@@ -131,6 +143,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Enterprise Web Portal',
       imageUrl: projectPreview6,
+      imageSrcSet: `${projectThumbnail6} 640w, ${projectPreview6} 1376w`,
     },
 
     // Row 3
@@ -151,6 +164,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Healthcare Management',
       imageUrl: projectPreview7,
+      imageSrcSet: `${projectThumbnail7} 640w, ${projectPreview7} 1376w`,
     },
     {
       id: 'cafe-system',
@@ -169,6 +183,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Point of Sale (POS)',
       imageUrl: projectPreview8,
+      imageSrcSet: `${projectThumbnail8} 640w, ${projectPreview8} 1376w`,
     },
     {
       id: 'restaurant-system',
@@ -187,8 +202,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
       ],
       badge: 'Hospitality ERP',
       imageUrl: projectPreview9,
+      imageSrcSet: `${projectThumbnail9} 640w, ${projectPreview9} 1376w`,
     },
   ];
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject }) => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+
 
   return (
     <section id="projects" className="relative py-24 overflow-hidden">
@@ -227,13 +248,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onStartProject
               className="gold-glass-card rounded-2xl overflow-hidden border border-[#D4AF37]/35 hover:border-[#FFD700] hover:shadow-[0_0_40px_rgba(255,215,0,0.35)] transition-all duration-300 flex flex-col group cursor-pointer text-left"
             >
               {/* Card Top: Large Visual Picture Preview (approx 60% of vertical presence) */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a0a0a] border-b border-[#D4AF37]/30">
-                <img
+              <div className="project-card-image relative w-full overflow-hidden bg-[#0a0a0a] border-b border-[#D4AF37]/30">
+                <ProjectImage
                   src={project.imageUrl}
+                  srcSet={project.imageSrcSet}
+                  sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 80px) / 2), calc(100vw - 32px)"
                   alt={`${project.title} Preview`}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-108 select-none"
+                  className="project-image-fill transition-transform duration-500 ease-out group-hover:scale-108 select-none"
                   loading="lazy"
-                  decoding="async"
                 />
 
                 {/* Subtle Gradient Shadow & Top Badge */}

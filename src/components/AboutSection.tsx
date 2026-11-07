@@ -127,7 +127,10 @@ export const AboutSection: React.FC = () => {
                   {/* Photo Container */}
                   <div className="relative rounded-lg overflow-hidden aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] bg-[#121212]">
                     <img
-                      src="/assets/aistudio/WhatsApp_Image_2026-11-06_at_2.46.48_PM_00eda1ef.jpeg"
+                      width={864}
+                      height={1184}
+                      decoding="async"
+                      src={`${import.meta.env.BASE_URL}assets/aistudio/WhatsApp_Image_2026-11-06_at_2.46.48_PM_00eda1ef.jpeg`}
                       alt="Sohail Khan in formal executive suit working in modern tech office"
                       className="w-full h-full object-cover object-[center_top] transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"

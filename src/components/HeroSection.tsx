@@ -117,7 +117,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <div className="w-[280px] h-[280px] sm:w-[330px] sm:h-[330px] lg:w-[370px] lg:h-[370px] rounded-full overflow-hidden bg-[#0c0c0c] relative shadow-inner">
                       {/* Real Uploaded Photo of Sohail Khan in Black T-shirt */}
                       <img
-                        src="/assets/aistudio/WhatsApp_Image_2026-11-06_at_4.01.26_PM_294ee7da.jpeg"
+                      width={864}
+                        height={882}
+                        fetchPriority="high"
+                        src={`${import.meta.env.BASE_URL}assets/aistudio/WhatsApp_Image_2026-11-06_at_4.01.26_PM_294ee7da.jpeg`}
                         alt="Sohail Khan - Founder of Neurovex"
                         className="w-full h-full object-cover object-[center_28%] scale-[1.02] select-none"
                         loading="eager"

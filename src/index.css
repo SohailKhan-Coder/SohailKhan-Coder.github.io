@@ -114,6 +114,39 @@
   animation: waveFlow 25s linear infinite;
 }
 
+/* Keep flex sizing and intrinsic image dimensions out of the preview layout. */
+.project-card-image {
+  aspect-ratio: 16 / 9;
+  flex: none;
+}
+.project-lightbox-image {
+  aspect-ratio: 1376 / 768;
+  max-height: 500px;
+}
+.project-image-fill {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Reserves no extra space: the existing image frame controls layout. */
+.project-image-skeleton {
+  background: linear-gradient(100deg, #141414 25%, #302916 50%, #141414 75%);
+  background-size: 200% 100%;
+  animation: projectImageShimmer 1.5s ease-in-out infinite;
+}
+@keyframes projectImageShimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-image-skeleton { animation: none; }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

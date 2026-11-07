@@ -10,6 +10,7 @@ export interface Project {
   badge: string;
   row: 1 | 2 | 3;
   imageUrl: string;
+  imageSrcSet: string;
 }
 
 export interface ExperienceItem {

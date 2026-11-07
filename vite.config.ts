@@ -5,6 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Resolve built assets relative to index.html on Netlify and GitHub project Pages.
+    base: './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

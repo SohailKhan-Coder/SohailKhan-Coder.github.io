@@ -12,6 +12,7 @@ import {
   Minimize2,
 } from 'lucide-react';
 import { Project } from '../types';
+import { ProjectImage } from './ProjectImage';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -25,6 +26,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onStartProject,
 }) => {
   const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    setIsZoomed(false);
+  }, [project?.id]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -96,15 +101,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           {/* Large Visual Picture Preview (60% Emphasis) */}
           <div className="relative bg-[#050505] overflow-hidden border-b border-[#D4AF37]/30 flex items-center justify-center">
             <div
-              className={`w-full overflow-hidden transition-all duration-300 cursor-zoom-in ${
+              className={`project-lightbox-image relative w-full overflow-hidden transition-all duration-300 cursor-zoom-in ${
                 isZoomed ? 'cursor-zoom-out' : ''
               }`}
               onClick={() => setIsZoomed(!isZoomed)}
             >
-              <img
+              <ProjectImage
                 src={project.imageUrl}
                 alt={`${project.title} Preview Screenshot`}
-                className={`w-full h-auto object-cover transition-transform duration-500 max-h-[500px] select-none ${
+                className={`project-image-fill transition-transform duration-500 select-none ${
                   isZoomed ? 'scale-125' : 'scale-100'
                 }`}
                 loading="eager"
