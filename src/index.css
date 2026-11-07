@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #D4AF37;
+    --gold-bright: #FFD700;
+    --gold-dark: #996515;
+    --gold-light: #FFF2B0;
+    --bg-dark: #080808;
+    --bg-surface: #101010;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #080808;
+    color: #F5F5F0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-gold {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Luxurious Metallic Gold Gradients */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF5C0 0%, #FFD700 30%, #D4AF37 70%, #996515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #FFF5C0 25%, #FFD700 50%, #D4AF37 75%, #996515 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 6s linear infinite;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Glassmorphism with Luminous Golden Borders */
+.gold-glass-card {
+  background: rgba(14, 14, 14, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(212, 175, 55, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glass-card:hover {
+  border-color: rgba(255, 215, 0, 0.65);
+  box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.22), inset 0 0 18px rgba(255, 215, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Gold Button */
+.gold-button {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 60%, #996515 100%);
+  color: #080808;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #FFF5C0 0%, #FFD700 50%, #D4AF37 100%);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+.gold-button-outline {
+  background: rgba(10, 10, 10, 0.6);
+  color: #FFD700;
+  border: 1px solid #D4AF37;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.gold-button-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #FFD700;
+  color: #FFF2B0;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Glowing Pulsing Ring */
+@keyframes goldPulseHalo {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.35), 0 0 50px rgba(255, 215, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.65), 0 0 85px rgba(255, 215, 0, 0.35);
+  }
+}
+
+.pulse-gold-halo {
+  animation: goldPulseHalo 4s ease-in-out infinite;
+}
+
+/* Subtle Animated Flowing Wave Grid Lines */
+@keyframes waveFlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.flowing-gold-wave {
+  animation: waveFlow 25s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
